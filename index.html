@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular Practice</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body>
+ <div ng-controller="myController">
+ Search: <input type="text" ng-model="name"/>
+ <br/>
+  <span>#Custmoers: {{customers.length}}</span>
+   <ul>
+    <li ng-repeat="customer in customers | filter:name"> 
+        Name: {{customer.name}} - City: {{customer.city}}</li>
+   </ul>
+   Customer Name:
+   <input type="text" placeholder="type here" ng-model="newCustomer.name"/>
+   Customer City:
+   <input type="text" placeholder="type here" ng-model="newCustomer.city"/>
+   <button ng-click="addCustomer()">Add Customer</button>
+ </div>
+</body>
+</html>
